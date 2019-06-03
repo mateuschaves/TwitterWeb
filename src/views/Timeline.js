@@ -52,12 +52,7 @@ export default class Timeline extends Component {
 
     this.setState({ newTweet: "" });
 
-    try {
-      const response = await api.post("tweets", { author, content, age, sex });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+    await api.post("tweets", { author, content, age, sex });
   };
 
   render() {
